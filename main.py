@@ -257,9 +257,13 @@ def makeMove(option, button):
     if(validMove):
         button.configure(state='normal', bg='#424251', text=currentMark)
         result = ticTacToe.evaluateVictory(option)
-        if not result:
+        if ticTacToe.getTurn() == 8 and not result:
+            messagebox.showinfo(message=("Empate!"), title="El juego ha terminado")
+
+        elif not result:
             ticTacToe.increaseTurn()
             drawTurn(ticTacToe.getTurn())
+
 
 
 # Función reiniciar los valores a nulos y los efectos visuales
