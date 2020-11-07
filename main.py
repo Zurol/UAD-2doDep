@@ -42,7 +42,12 @@ def tripleMatch(array):
         return False
 
 
-
+#
+# Clase Jugador
+# @setName []
+# @getName
+# @setMark
+# @setMark
 class Player():
     name = ""
     mark = ""
@@ -201,8 +206,6 @@ class TicTacToe():
                 messagebox.showinfo(message=("Victoria de {0}!".format(ticTacToe.activePlayer.getName().upper())), title="El juego ha terminado")
                 return True
 
-        #VALIDACION
-        #tripleMatch(temporalArray)
         return False
 
 
@@ -219,7 +222,9 @@ class TicTacToe():
         print (self.board)
 
 
-
+# Función para realizar la actualización de las etiquetas de turno.
+# @turno    int[] [Valores a comparar]
+# Return    bool  [Resultado de la evaluación]
 def drawTurn(turn):
     if (turn%2) == 0:
         firstCharacterTurnLabel.configure(bg='#0f0', text="TURNO ACTIVO")
@@ -228,6 +233,11 @@ def drawTurn(turn):
         firstCharacterTurnLabel.configure(bg='#ccc', text="TURNO INACTIVO")
         secondCharacterTurnLabel.configure(bg='#0f0', text="TURNO ACTIVO")
 
+
+# Función para realizar la "Tirada" del jugador.
+# @option   int     [Input del usuario]
+# @button   Object  [Componente que activó el click.]
+#
 def makeMove(option, button):
     currentMark = ticTacToe.currentPlayer().getMark()
 
@@ -240,6 +250,9 @@ def makeMove(option, button):
             drawTurn(ticTacToe.getTurn())
 
 
+# Función reiniciar los valores a nulos y los efectos visuales
+# al estado inicial.
+#
 def startGame():
     print("Iniciando el juego")
 
@@ -285,10 +298,6 @@ def startGame():
     ticTacToe.printBoard()
 
     drawTurn(ticTacToe.getTurn())
-
-
-
-
 
 
 
