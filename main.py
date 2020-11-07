@@ -44,7 +44,7 @@ def tripleMatch(array):
 
 #
 # Clase Jugador
-# @setName []
+# @setName
 # @getName
 # @setMark
 # @setMark
@@ -65,6 +65,18 @@ class Player():
         return self.mark
 
 
+#
+# Clase TicTacToe
+# @restartTurn
+# @increaseTurn
+# @getTurn
+# @currentPlayer
+# @makeMove
+# @updateValue
+# @evaluateVictory
+# @printPlayers
+# @clearBoard
+# @printBoard
 class TicTacToe():
     firstPlayer = Player()
     secondPlayer = Player()
